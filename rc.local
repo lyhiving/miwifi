@@ -1,0 +1,8 @@
+# restore phy config
+speed=$(uci -q get xiaoqiang.common.WAN_SPEED)
+[ -n "$speed" ] && /usr/sbin/phyhelper swan "$speed"
+#open llmp
+cd /userdisk/llmp/manager/ && ./start_llmp.sh
+#open frpc
+cd /userdisk/frpc/ && nohup ./frpc -c ./frpc.ini &
+exit 0
