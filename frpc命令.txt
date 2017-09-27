@@ -1,8 +1,0 @@
-在 userdisk 文件夹下新建 frpc 文件夹
-cd /userdisk && mkdir frpc
-
-启动后台运行：
-cd /userdisk/frpc/ && nohup ./frpc -c ./frpc.ini &
-
-结束进程：
-killall frpc
