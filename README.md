@@ -3,7 +3,7 @@
 - 脚本如果安装失败或安装成功后完全没用，说明并没有安装成功
 - 原因是91en.xyz站点无法访问，脚本没有下载成功导致（站点为家用PC搭建随时有可能关闭）
 - 若91en.xyz关闭，可在此页面[*下载install_llmp_frp.sh*](https://github.com/wo20ljj/miwifi/)
-- 下载之后用winscp等工具将文件放到小米路由硬盘下tmp文件中
+- 下载之后用winscp等工具将文件放到小米路由硬盘下tmp文件夹中
 - 用ssh工具执行chmod +x /tmp/install_llmp_frp.sh && /tmp/install_llmp_frp.sh
 
 install_llmp_frp.sh
