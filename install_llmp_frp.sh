@@ -4,7 +4,7 @@ echo -e "#======================================================================
 #  仅测试小米路由R1D（理论上R2D也能安装）
 #  除R1D和R2D外其他路由暂不支持，强制安装后果自负
 #  Description: llmp+frp+kodexplorer一键安装
-#  Version: 1.0.1
+#  Version: 1.0.2
 #  Author: David
 #  web: http://91en.xyz/miwifi
 #======================================================================"
@@ -30,8 +30,9 @@ echo -e "\033[33m #============================配置frpc.ini===================
 #  3、将custom_domains = xxx.xx.xx改为已经解析的域名
 #  4、默认端口为local_port = 8080可不用更改
 #  5、按i键进入修改，完成后按Esc键，再输入:wq回车保存
-#  6、这里提供2个免费frp服务商，默认为frp.lu8.win
-#        www.chuantou.org      frp.lu8.win
+#  6、这里提供2个免费frp服务商，默认为frp1.chuantou.org
+#  server_addr = frp1.chuantou.org   or     frp.lu8.win
+#  privilege_token = www.xxorg.com   or     frp888
 #========================配置过程可随时向上翻阅======================== \033[0m \n"
 echo -e "\033[35m 请认真阅读以上内容，继续配置吗？请输入y/n \033[0m \n"
 read
@@ -42,6 +43,7 @@ read
 [ "$REPLY" = "y" -o "$REPLY" = "Y" ] || { echo "退出安装..."; exit; }
 wget http://91en.xyz/miwifi/frpc.ini -O /userdisk/frpc/frpc.ini
 vi /userdisk/frpc/frpc.ini
+cd /userdisk/frpc/ && nohup ./frpc -c ./frpc.ini &
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> frpc.ini配置完成 >>>>>>>>>>>>>>>>>>>>>>>>>>"
 
