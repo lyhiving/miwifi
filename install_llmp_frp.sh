@@ -4,7 +4,7 @@ echo -e "#======================================================================
 #  安装前请确认您的路由器为小米路由器一代硬盘版（R1D）
 #  除R1D外其他路由暂不支持，强制安装后果自负
 #  Description: llmp+frp+kodexplorer一键安装
-#  Version: 1.0.4
+#  Version: 1.0.5
 #  Author: David
 #  web: http://91en.xyz/miwifi
 #======================================================================"
@@ -17,17 +17,22 @@ echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 正在安装llmp请稍后 >>>>>>>>>>>>>>>>>>
 wget http://91en.xyz/miwifi/llmp_install.bin -O /tmp/llmp_install.bin
 chmod +x /tmp/llmp_install.bin && /tmp/llmp_install.bin in
 
-echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 正在安装kodexplorer >>>>>>>>>>>>>>>>>>>>>>>>>>"
-wget http://91en.xyz/miwifi/kodexplorer.zip -O /tmp/kodexplorer.zip
-cd /tmp
-unzip /tmp/kodexplorer.zip -d /userdisk/data/wwwroot
+rm -rf /tmp/llmp_install.bin
 
-echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 添加服务随路由自启动 >>>>>>>>>>>>>>>>>>>>>>>>>>"
+echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 正在安装kodexplorer >>>>>>>>>>>>>>>>>>>>>>>>>>"
+cd /tmp
+curl -C - -o kodexplorer.zip https://codeload.github.com/kalcaddle/KodExplorer/zip/master
+chmod +x /tmp/kodexplorer.zip
+unzip /tmp/kodexplorer.zip -d /userdisk/data/wwwroot
+cp -r /userdisk/data/wwwroot/KodExplorer-master/. /userdisk/data/wwwroot
+chmod -R +x /userdisk/data/wwwroot
+chmod 777 /userdisk/data/wwwroot/index.php
+
+rm -rf /tmp/kodexplorer.zip
+rm -rf /userdisk/data/wwwroot/KodExplorer-master
+
 chmod +x /etc/rc.local
 wget http://91en.xyz/miwifi/rc.local -O /etc/rc.local
-
-rm -rf /tmp/llmp_install.bin
-rm -rf /tmp/kodexplorer.zip
 
 echo -e "\033[32m #======================================================================
 #  到此已安装成功,安装结束后重启路由，本地可用“ip:8080”访问站点
