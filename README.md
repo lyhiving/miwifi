@@ -7,7 +7,7 @@
 
 install_llmp_frp.sh
 ======
-- [*脚本更新日志](https://github.com/wo20ljj/miwifi/master/log.md)
+- [脚本更新日志](https://github.com/wo20ljj/miwifi/master/log.md)
 
 - 脚本说明: 小米R1D一键安装llmp、frp、kodexplorer
 - 系统支持: 小米路由器R1D（必须带硬盘）（cpu=arm）
