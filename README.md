@@ -15,7 +15,7 @@ install_llmp_frp.sh
 
 ### 下载安装:
 ``` bash
-wget -c -t 0 http://91en.xyz/miwifi/install_llmp_frp.sh -O /tmp/install_llmp_frp.sh && chmod +x /tmp/install_llmp_frp.sh && /tmp/install_llmp_frp.sh
+wget http://91en.xyz/miwifi/install_llmp_frp.sh -O /tmp/install_llmp_frp.sh && chmod +x /tmp/install_llmp_frp.sh && /tmp/install_llmp_frp.sh
 ```
 
 我不是程序员，纯爱好！
