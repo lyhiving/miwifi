@@ -2,7 +2,7 @@
 ## 经过测试，脚本只支持小米路由器R1D
 ### 首先感谢loverlf老大的LLMP安装包
 #### 注意:如果不想过多的折腾可以直接使用下面的命令一键安装（很少地方需要手动配置）
-- [*小米路由器R1D搭建web环境LLMP下载地址*](https://github.com/wo20ljj/miwifi/releases/download/1.0.4/llmp_install.zip)
+- [小米路由器R1D搭建web环境LLMP下载地址](https://github.com/wo20ljj/miwifi/releases/download/llmp/llmp_install.zip)
 - 若无法安装请下载miwifi_llmp和miwifi_frp内网穿透，根据教程手动安装
 
 install_llmp_frp.sh
@@ -15,7 +15,7 @@ install_llmp_frp.sh
 
 ### 下载安装:
 ``` bash
-wget http://91en.xyz/miwifi/install_llmp_frp.sh -O /tmp/install_llmp_frp.sh && chmod +x /tmp/install_llmp_frp.sh && /tmp/install_llmp_frp.sh
+wget -c -t 0 http://91en.xyz/miwifi/install_llmp_frp.sh -O /tmp/install_llmp_frp.sh && chmod +x /tmp/install_llmp_frp.sh && /tmp/install_llmp_frp.sh
 ```
 
 我不是程序员，纯爱好！
