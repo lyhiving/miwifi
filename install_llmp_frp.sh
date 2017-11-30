@@ -4,7 +4,7 @@ echo -e "#======================================================================
 #  安装前请确认您的路由器为小米路由器一代硬盘版（R1D）
 #  除R1D外其他路由暂不支持，强制安装后果自负
 #  Description: llmp+frp+kodexplorer一键安装
-#  Version: 1.0.5
+#  Version: 1.0.6
 #  Author: David
 #  web: http://91en.xyz/miwifi
 #======================================================================"
@@ -14,9 +14,11 @@ read
 [ "$REPLY" = "y" -o "$REPLY" = "Y" ] || { echo "退出安装..."; exit; }
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 正在安装llmp请稍后 >>>>>>>>>>>>>>>>>>>>>>>>>>"
-wget http://91en.xyz/miwifi/llmp_install.bin -O /tmp/llmp_install.bin
+wget -c -t 0 http://91en.xyz/miwifi/llmp_install.bin -O /tmp/llmp_install.bin
 chmod +x /tmp/llmp_install.bin && /tmp/llmp_install.bin in
+cd /userdisk/llmp/manager/ && ./start_llmp.sh
 
+rm -rf /tmp/llmp_install.zip
 rm -rf /tmp/llmp_install.bin
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 正在安装kodexplorer >>>>>>>>>>>>>>>>>>>>>>>>>>"
@@ -49,7 +51,7 @@ read
 [ "$REPLY" = "y" -o "$REPLY" = "Y" ] || { echo "退出安装..."; exit; }
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 正在安装frp请稍候 >>>>>>>>>>>>>>>>>>>>>>>>>>"
-wget http://91en.xyz/miwifi/frp_0.9.3_linux_arm.tar.gz -O /tmp/frp_0.9.3_linux_arm.tar.gz
+wget -c -t 0 http://91en.xyz/miwifi/frp_0.9.3_linux_arm.tar.gz -O /tmp/frp_0.9.3_linux_arm.tar.gz
 chmod +x /tmp/frp_0.9.3_linux_arm.tar.gz
 tar -zxvf /tmp/frp_0.9.3_linux_arm.tar.gz -C /userdisk
 cd /userdisk
@@ -71,7 +73,7 @@ read
 
 wget http://91en.xyz/miwifi/frpc.ini -O /userdisk/frpc/frpc.ini
 vi /userdisk/frpc/frpc.ini
-cd /userdisk/frpc/ && nohup ./frpc -c ./frpc.ini &
+cd /userdisk/frpc/ && nohup ./frpc -c ./frpc.ini
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> frpc.ini配置完成 >>>>>>>>>>>>>>>>>>>>>>>>>>"
 
