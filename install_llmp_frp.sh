@@ -73,7 +73,7 @@ read
 
 wget http://91en.xyz/miwifi/frpc.ini -O /userdisk/frpc/frpc.ini
 vi /userdisk/frpc/frpc.ini
-cd /userdisk/frpc/ && nohup ./frpc -c ./frpc.ini
+cd /userdisk/frpc/ && nohup ./frpc -c ./frpc.ini &
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> frpc.ini配置完成 >>>>>>>>>>>>>>>>>>>>>>>>>>"
 
