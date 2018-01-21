@@ -26,4 +26,4 @@ wget http://91en.xyz/miwifi/install_llmp_frp.sh -O /tmp/install_llmp_frp.sh && c
 - 尊重语言发展规律，按母语方式学英语；
 - 为每一个孩子定制科学、轻松、高效的英语路线图。
 - 双语思维同步发展，培养国际化人才。
-- 官方网站：http://www.91en.pw   (正在建设中...还未完善..敬请期待.)
+- 官方网站：(正在建设中……)
