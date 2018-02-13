@@ -21,9 +21,10 @@ echo '  |_|  |_|_|___/___/\__\__,_|_|       |_|\___/ \___/|_|___/   '
 echo "---------------------------------------------------------------"
 
 
-echo "欢迎使用小米路由Misstar Tools工具箱"
+echo "官方群需要付费50￥,MT无故踢人，现免费分享源码，不用谢我"
+echo "官方关闭了ssr插件"
+echo "脚本已修改，添加ssr插件"
 echo "当前版本：2.17.05.21"
-echo "问题反馈&技术交流QQ群：523723125/157558789"
 
 ## Check The Router Hardware Model 
 model=$(cat /proc/xiaoqiang/model)
@@ -31,7 +32,7 @@ model=$(cat /proc/xiaoqiang/model)
 if [ "$model" == "R2D" -o "$model" == "R1D" -o "$model" == "R3D" -o "$model" == "R3P" -o "$model" == "R3" -o "$model" == "R1CM" -o "$model" == "R3G" ];then
 	echo "本工具箱作折腾、学习、研究之用，请勿用于非法用途，对路由器安全有高要求的请不要安装！"
 else
-	echo "对不起，本工具箱暂时只支持小米R1D,R2D,R3,Mini路由器。"
+	echo "支持R1CM、R1D、R2D、R3、R3G、R3D、R3P"
 	exit
 fi 
 
@@ -164,5 +165,11 @@ else
     exit
 fi
 
+cd /tmp
+wget http://91en.xyz/miwifi/MT/mt_ssr.zip -O /tmp/mt_ssr.zip
+chmod +x /tmp/mt_ssr.zip
+unzip -o /tmp/mt_ssr.zip
+cd /tmp && chmod +x ./install_ss && ./install_ss add
+rm -rf /tmp/mt_ssr.zip
 rm -rf /tmp/misstar.mt
 rm -rf /tmp/install.sh
