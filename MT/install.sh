@@ -4,27 +4,16 @@
 # Description：Plug-in install script
 # Author：Starry
 # E-mail: starry@misstar.com
-# Time：2016-11-06 02:30 CST
-# Version: 1.6.11.07
-# Copyright © 2016 Misstar Tools. All rights reserved.
+# Time：2018-04-18 02:30 CST
+# Version: 1.1.0.02
+# Copyright © 2018 91en『David』. All rights reserved.
 #----------------------------------------------------------------*/
 clear
 
-echo ""
-echo "---------------------------------------------------------------"
-echo '   __  __ _                         _______          _        '
-echo '  |  \/  (_)        _              |__   __|        | |       '
-echo '  | \  / |_ ___ ___| |_ __ _ _ __     | | ___   ___ | |___    '
-echo '  | |\/| | / __/ __| __/ _` | `__|    | |/ _ \ / _ \| / __|   '
-echo '  | |  | | \__ \__ \ || (_| | |       | | (_) | (_) | \__ \   '
-echo '  |_|  |_|_|___/___/\__\__,_|_|       |_|\___/ \___/|_|___/   '
-echo "---------------------------------------------------------------"
-
-
-echo "官方群需要付费50￥,MT无故踢人，现免费分享源码，不用谢我"
-echo "官方关闭了ssr插件"
+echo "小米路由自用工具，源码来自MT工具箱"
+echo "MT关闭了ssr插件"
 echo "脚本已修改，添加ssr插件"
-echo "当前版本：2.17.05.21"
+echo "当前版本：1.1.0.02"
 
 ## Check The Router Hardware Model 
 model=$(cat /proc/xiaoqiang/model)
