@@ -54,7 +54,7 @@ echo -e "\033[35m 安装frp内网穿透客户端！请输入y继续/n退出 \033
 read
 [ "$REPLY" = "y" -o "$REPLY" = "Y" ] || { echo "退出安装..."; exit; }
 
-rm -rf /root/frp
+rm -rf /userdisk/frp
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 正在安装frp请稍候 >>>>>>>>>>>>>>>>>>>>>>>>>>"
  
@@ -71,8 +71,8 @@ download(){
     echo -n "下载FRP . . ."
     sleep 1 
     echo -n "."
-    mkdir /root/frp
-    wget -O /root/frp/frp.tar.gz $1
+    mkdir /userdisk/frp
+    wget -O /userdisk/frp/frp.tar.gz $1
     if [ $? == 0 ] ; then
         echo -e "[${green}成功${nc}]"
     else
@@ -84,17 +84,17 @@ download(){
 install(){
     echo -n "Installing Frp . . ."
     pcd=`pwd`
-    cd /root/frp/
+    cd /userdisk/frp/
     sleep 1
     echo -n "."
-    tar zxf /root/frp/frp.tar.gz 
+    tar zxf /userdisk/frp/frp.tar.gz 
     if [ $? == 0 ] ; then
         echo -e "[${green}成功${nc}]"
     else
         echo -e "[${red}失败${nc}]"
         exit 1
     fi
-    rm -f /root/frp/frp.tar.gz
+    rm -f /userdisk/frp/frp.tar.gz
     mv frp_0.* frp-config
     cd $pcd
 }
@@ -117,7 +117,7 @@ EOF
 config(){
     echo -n "设置FRP Frp . . ."
     pcd=`pwd`
-    cd /root/frp/frp-config
+    cd /userdisk/frp/frp-config
     sleep 1
     echo -n "."
     rm -f frpc.ini
@@ -187,7 +187,7 @@ sudo cat > /etc/init.d/frp <<EOF
 PIDF=\` ps  -A | grep frpc | awk '{print \$1}'\`
 case "\$1" in
         start)
-        nohup /root/frp/frp-config/frpc -c /root/frp/frp-config/frpc.ini >/dev/null 2>&1  &
+        nohup /userdisk/frp/frp-config/frpc -c /userdisk/frp/frp-config/frpc.ini >/dev/null 2>&1  &
         ;;
         stop)
         kill -3  \$PIDF
@@ -212,7 +212,7 @@ exit 0
 EOF
  
  
-chmod +x /root/frp
+chmod +x /userdisk/frp
  
     if [ $? == 0 ] ; then
         echo -e "[${green}成功${nc}]"
@@ -233,8 +233,6 @@ case $key in
 (1) ARM
 (2) Mips
 (3) Mips64 
-(4) Mipsle
-(5) Mips64le 
  
 EOF
         read -p "请输入序号:" key
@@ -247,12 +245,6 @@ EOF
             ;;
             3)
                 download http://91en.xyz/frp/v0.9.3/frp_0.9.3_linux_mips64.tar.gz
-            ;;
-            4)
-                download http://91en.xyz/frp/v0.9.3/frp_0.9.3_linux_mipsle.tar.gz
-            ;;
-            5)
-                download http://91en.xyz/frp/v0.9.3/frp_0.9.3_linux_mips64le.tar.gz
             ;;
             *)
                 exit
@@ -268,13 +260,13 @@ EOF
                 sleep 1
 echo -e "\033[32m 
 #=========================================================================
-#  通过：\"cd /root/frp/frp-config/ && nohup ./frpc -c ./frpc.ini &\" 命令启动
+#  通过：\"cd /userdisk/frp/frp-config/ && nohup ./frpc -c ./frpc.ini &\" 命令启动
 #  通过：\"vim /etc/rc.local\" 设置开机启动
-#  配置文件路径 /root/frp/frp-config/frpc.ini
+#  配置文件路径 /userdisk/frp/frp-config/frpc.ini
 #  最后请将网站域名解析到frp服务端域名
 #========================================================================= \033[0m \n"
-chmod +x /root/frp/frp-config/*
-cd /root/frp/frp-config/ && nohup ./frpc -c ./frpc.ini &
+chmod +x /userdisk/frp/frp-config/*
+cd /userdisk/frp/frp-config/ && nohup ./frpc -c ./frpc.ini &
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> frpc.ini配置完成 >>>>>>>>>>>>>>>>>>>>>>>>>>"
 

@@ -4,5 +4,5 @@ speed=$(uci -q get xiaoqiang.common.WAN_SPEED)
 #open llmp
 cd /userdisk/llmp/manager/ && ./start_llmp.sh
 #open frpc
-cd /root/frp/frp-config/ && nohup ./frpc -c ./frpc.ini &
+cd /userdisk/frp/frp-config/ && nohup ./frpc -c ./frpc.ini &
 exit 0
