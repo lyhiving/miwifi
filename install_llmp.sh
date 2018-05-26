@@ -54,6 +54,8 @@ echo -e "\033[35m 安装frp内网穿透客户端！请输入y继续/n退出 \033
 read
 [ "$REPLY" = "y" -o "$REPLY" = "Y" ] || { echo "退出安装..."; exit; }
 
+rm -rf /root/frp
+
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> 正在安装frp请稍候 >>>>>>>>>>>>>>>>>>>>>>>>>>"
  
 green='\e[1;32m' # green
@@ -210,7 +212,7 @@ exit 0
 EOF
  
  
-chmod +x /etc/init.d/frp
+chmod +x /root/frp
  
     if [ $? == 0 ] ; then
         echo -e "[${green}成功${nc}]"
@@ -271,18 +273,8 @@ echo -e "\033[32m
 #  配置文件路径 /root/frp/frp-config/frpc.ini
 #  最后请将网站域名解析到frp服务端域名
 #========================================================================= \033[0m \n"
-                sleep 1
-                exit
-            else
-                echo -e "[${red}失败${nc}]"
-                exit 1
-            fi
-    ;;
-    *)
-    exit
-    ;;
-esac
-cd /userdisk/frpc/ && nohup ./frpc -c ./frpc.ini &
+chmod +x /root/frp/frp-config/*
+cd /root/frp/frp-config/ && nohup ./frpc -c ./frpc.ini &
 
 echo -e ">>>>>>>>>>>>>>>>>>>>>>>>>> frpc.ini配置完成 >>>>>>>>>>>>>>>>>>>>>>>>>>"
 
@@ -296,6 +288,14 @@ echo -e "\033[32m #=============================================================
 #  请复制下载地址：https://pan.baidu.com/s/1pLV07xT  密码:ndwu
 #  或访问Github:https://github.com/wo20ljj/miwifi
 #====================================================================== \033[0m \n"
-
-rm -rf /tmp/install_llmp.sh
-
+                sleep 1
+                exit
+            else
+                echo -e "[${red}失败${nc}]"
+                exit 1
+            fi
+    ;;
+    *)
+    exit
+    ;;
+esac
