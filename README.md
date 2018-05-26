@@ -1,14 +1,13 @@
 # 小米路由器R1D、R2D、R3D，搭建llmp、kodcloud、frp
 ## 经过测试，脚本支持小米路由器R1D、R2D、R3D
 ### 首先感谢loverlf老大的LLMP安装包
-#### 注意:如果不想过多的折腾可以直接使用下面的命令一键安装（很少地方需要手动配置）
-- [小米路由器R1D搭建web环境LLMP下载地址](https://github.com/wo20ljj/miwifi/releases/download/llmp/llmp_install.zip)
+
 - 若无法安装请下载miwifi_llmp和miwifi_frp内网穿透，根据教程手动安装
 
 install_llmp.sh (一键脚本)
 ======
 - [脚本更新日志](https://github.com/wo20ljj/miwifi/blob/master/log.md)
-- 没什么问题，暂不更新了！
+- 没什么问题，暂不更新了！（最近一次更新2018-05-26 version：1.0.7）
 
 - 脚本说明: 小米R1D、R2D、R3D一键安装llmp、kodcloud、frp
 - 系统支持: 小米路由器R1D（必须带硬盘）（arm1）
