@@ -7,7 +7,7 @@
 install_llmp.sh (一键脚本)
 ======
 - [脚本更新日志](https://github.com/wo20ljj/miwifi/blob/master/log.md)
-- 没什么问题，暂不更新了！（最近一次更新2018-05-26 version：1.0.7）
+- 没什么问题，暂不更新了！（最近一次更新2018-06-24 version：1.0.8）
 
 - 脚本说明: 小米R1D、R2D、R3D一键安装llmp、kodcloud、frp
 - 系统支持:   
