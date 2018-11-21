@@ -23,8 +23,7 @@ echo "---------------------------------------------------------------"
 
 echo "欢迎使用小米路由Misstar Tools工具箱"
 echo "当前版本：2.17.05.21"
-echo "此版本为MT2.0终结版，由LifeHeart分流"
-echo "问题反馈&技术交流QQ群：523723125/157558789"
+echo "此版本为MT2.0终结版，由lyhiving分流"
 
 ## Check The Router Hardware Model 
 model=$(cat /proc/xiaoqiang/model)
