@@ -1,6 +1,4 @@
 # 小米路由器R1D、R2D、R3D，搭建llmp、kodcloud、frp
-## 经过测试，脚本支持小米路由器R1D、R2D、R3D
-### 首先感谢loverlf老大的LLMP安装包
 
 - 若无法安装请下载miwifi_llmp和miwifi_frp内网穿透，根据教程手动安装
 
@@ -18,32 +16,29 @@ install_llmp.sh (一键脚本)
 
 ### 下载安装:
 ``` bash
-wget http://91en.xyz/miwifi/install_llmp.sh -O /tmp/install_llmp.sh && chmod +x /tmp/install_llmp.sh && /tmp/install_llmp.sh
+wget http://d.tedx.net/miwifi/install_llmp.sh -O /tmp/install_llmp.sh && chmod +x /tmp/install_llmp.sh && /tmp/install_llmp.sh
 ```
 
 ### 脚本卸载:
 ``` bash
-wget http://91en.xyz/miwifi/uninstall_llmp.sh -O /tmp/uninstall_llmp.sh && chmod +x /tmp/uninstall_llmp.sh && /tmp/uninstall_llmp.sh
+wget http://d.tedx.net/miwifi/uninstall_llmp.sh -O /tmp/uninstall_llmp.sh && chmod +x /tmp/uninstall_llmp.sh && /tmp/uninstall_llmp.sh
 ```
 ======================================================
-# MT 
+# MT 简单版
 - MT是小米路由插件（不用多介绍了）
 - 原本MT插件官方关闭了ssr插件
 - 本脚本在原脚本基础上添加了ssr插件
 
 ### 下载安装:
 ``` bash
-wget http://91en.xyz/miwifi/MT/install.sh -O /tmp/install.sh && chmod +x /tmp/install.sh && /tmp/install.sh
+rm -rf /tmp/install.sh && wget http://d.tedx.net/miwifi/MT/install.sh -O /tmp/install.sh && chmod +x /tmp/install.sh && /tmp/install.sh
 ```
 
+# MT2.0 分流版本
+- MT2.0官方已经不提供
+- 全部封装原来的内容
 
-我不是程序员，纯爱好！
-======
-
-《进优英语》
-- 少儿英语启蒙，我们的理念是：
-- 尊重儿童发展规律，孩子在前，妈妈/老师在后；
-- 尊重语言发展规律，按母语方式学英语；
-- 为每一个孩子定制科学、轻松、高效的英语路线图。
-- 双语思维同步发展，培养国际化人才。
-- 官方网站：(正在建设中……)
+### 一键安装:
+``` bash
+rm -rf /tmp/install.sh && wget http://d.tedx.net/miwifi/MT/tools/appstore/install.sh -O /tmp/install.sh && chmod +x /tmp/install.sh && /tmp/install.sh
+```
