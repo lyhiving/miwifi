@@ -23,7 +23,7 @@ echo "---------------------------------------------------------------"
 
 echo "欢迎使用小米路由Misstar Tools工具箱"
 echo "当前版本：2.17.05.21"
-echo "此版本为MT2.0终结版，由lyhiving分流"
+echo "此版本为MT2.0终结版，由007分流"
 
 ## Check The Router Hardware Model 
 model=$(cat /proc/xiaoqiang/model)
@@ -97,7 +97,7 @@ fi
 
 echo "开始下载安装包..."
 
-url="http://d.tedx.net/miwifi/MT/tools/appstore/$model"
+url="http://s.007.li/miwifi/appstore/$model"
 
 wget ${url}/misstar.mt -O /tmp/misstar.mt
 
